@@ -31,7 +31,7 @@ const App = () => {
     <Navbar />
     <div className='bg-gray-900'>
       <div className='max-w-screen-xl mx-auto'>
-        {loading && <Preloader />}
+        {/* {loading && <Preloader />} */}
         <Hero />
         <ProjectsSection/>
         <AboutmeSection/>

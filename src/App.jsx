@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Preloader from './components/Preloader'
-import AboutmeSection from './components/AboutmeSection'
-import SkillsSection from './components/SkillsSection'
-import ContactSection from './components/ContactSection'
-import ProjectsSection from './components/ProjectsSection.Jsx'
-import FAQSection from './components/FAQSection'
+import Aboutme from './components/Aboutme'
+import Skills from './components/Skills'
+import Contact from './components/Contact'
+import Projects from './components/Projects'
 import Footer from './components/Footer'
+import FAQs from './components/FAQS'
 
 const App = () => {
 
   const [loading, setLoading] = useState(true);
+  const timer = setTimeout(() => setLoading(false), 2000);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -23,6 +24,7 @@ const App = () => {
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('load', handleLoad);
+      clearTimeout(timer);
     }
   }, [])
 
@@ -31,13 +33,13 @@ const App = () => {
     <Navbar />
     <div className='bg-gray-900'>
       <div className='max-w-screen-xl mx-auto'>
-        {/* {loading && <Preloader />} */}
+        {loading?(<Preloader/>):null}
         <Hero />
-        <ProjectsSection/>
-        <AboutmeSection/>
-        <SkillsSection/>
-        <ContactSection/>
-        <FAQSection/>
+        <Projects/>
+        <Aboutme/>
+        <Skills/>
+        <Contact/>
+        <FAQs/>
         <Footer/>
       </div>
     </div>

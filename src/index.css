@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 html{
-    scroll-behavior: smooth;
+    @apply scroll-smooth;
 }
 
 @keyframes dropFromUp {
@@ -17,4 +17,17 @@ html{
         opacity: 1;
     }
 }
+
+
+.skill-icon {
+    @apply mx-auto group-hover:text-[#B9A14C] group-hover:scale-125 transition-all duration-200;
+}
+
+/* Custom styles for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    @apply !text-[#B9A14C];
+}
+
+
 
